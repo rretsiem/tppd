@@ -1,0 +1,967 @@
+body, body>div[x-mojo-element=Scroller] {
+/*	background-color: #fade01;*/
+}
+
+body {
+/*	background: #fade01;*/
+	font-size: 18px;
+}
+
+.palm-scrim, #scene-scrim {
+	background: rgba(255,121,16, 0.8);
+}
+
+#scene-scrim {
+	position: fixed;
+	background: rgba(149,69,8, 0.8);
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: none;
+	z-index: 8;
+}
+
+#scene-wrapper {
+	background: #fade01;
+	background: url(../images/beer-bg.png) no-repeat;
+	background-position-x:center;
+	background-position-y: 31%;
+	color: #000;
+}
+
+#scene-container {
+	border-color: rgba(242, 159, 5, 0.5);
+	border-style:solid;
+	border-width: 1px;
+	background: rgba(242, 159, 5, 0.4);
+	margin: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	-webkit-border-radius: 6px;
+}
+
+#separator{
+	position: absolute;
+	border-bottom: 1px solid #f93;
+	height: 2px;
+	width: 100%;
+	top: 55px;
+	margin-bottom: 3px;
+}
+
+#navigationScroller {
+	padding-bottom: 4px;
+}
+
+
+#launch {
+	margin-top: 20px;
+	height: 400px;
+	background: url(../images/tppd_bg.png) no-repeat top 50% transparent;
+	background-size: 95%;
+}
+
+#loginForm {
+	margin-top: 15px;
+}
+
+.panel{
+	float: left;
+	display: inline-block;
+}
+.scrollerContainer {
+	margin-top: 0px;
+}
+
+.nav-item {
+	float: left;
+	text-align: left;
+	font-size: 2.1em !important; 
+	text-transform: lowercase;
+	color: #f29f05;
+	padding: 0px 14px 0px 14px;
+	letter-spacing: -2px;
+	-webkit-transition-property: color;
+	-webkit-transition-duration: 350ms;
+	-webkit-transition-timing-function: ease-out;
+}
+
+.active {
+	color: #8c2703;
+	z-index: 100;
+}
+
+
+/* feed items */
+.palm-list {
+	padding: 0 0 10px 0;
+	margin-top: 0px;
+}
+
+.content-row .palm-row-wrapper {
+   min-height: 58px !important;
+}
+
+.content-row {
+	text-align: left;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-bottom: 3px;
+	padding-top: 5px !important;
+	background: transparent;
+	border-bottom: 1px solid rgba(0,0,0, 0.2);
+}
+
+.content-feed_meta {
+	padding: 0;
+	margin-bottom: 4px;
+	margin-left: 38px;
+	margin-top: 4px !important;
+	line-height: 1em;
+}
+
+.content-created_at, .content-location {
+	float: right;
+	font-size: 0.7em;
+	font-weight: lighter;
+	color: rgba(0,0,0, 0.5);
+}
+
+.content-user_name {
+	font-size: 0.9em;
+	color: rgba(255,255,255, 0.9);
+	padding: 0;
+	margin: 0;
+}
+
+.content-comment, .content-beer_name, .content-brewery_name {
+	color: rgba(0,0,0, 0.85);
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+.content-brewery_name {
+	color: rgba(0,0,0, 0.6);
+	font-weight: normal;
+}
+
+.content-comment {
+	color: rgba(0,0,0, 0.6);
+}
+
+.content-location {
+	color: rgba(0,0,0, 0.6);
+	margin-top: -9px;
+}
+
+.content-row.selected {
+	background-color: rgba(0,0,0, 0.5) !important;
+	border-top: 1px solid #444444;
+	border-bottom: none !important;
+}
+
+.content-haslocation {
+	background: url(../images/small-pin.png) no-repeat;
+	height: 16px;
+	width: 16px;
+	display: block;
+	float: left;
+	margin-right: 0px;
+}
+
+.avatar_thumbnail {
+	float: left;
+	margin: 2px 3px 2px -3px;
+	overflow: hidden;
+	height: 42px;
+	width: 42px;
+	background: none !important;
+	-webkit-border-radius: 4px;
+}
+
+.avatar_thumbnail img {
+	width: 42px;
+	height: 42px;
+}
+
+/* === pane template === */
+#friendfeed-pane, #post-comment-pane, #search-pane, #beerDetails-pane, #venueSearch-pane, #checkinDetails-pane, #checkinSuccess-pane {
+	position: fixed;
+	display: block;
+	width: 98%;
+	left: 1%;
+	margin: 0;
+	z-index: 10;
+	background: rgba(0,0,0, 0.9);
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #bbb;
+	border-left: 1px solid #bbb;
+	-webkit-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 12px;
+	-webkit-transition-property: all;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 300ms;
+}
+
+#pane-fade-top {
+	position: absolute;
+	top: 1.6em;
+	left: 0px;
+	z-index: 301;
+	height: 54px;
+	width: 100%;
+	background: url(../images/scene-fade-top-dark.png) no-repeat;
+	-webkit-palm-mouse-target: ignore;
+}
+
+#pane-fade-bottom {
+	position: absolute;
+	left: 0px;
+	z-index: 301;
+	height: 54px;
+	width: 100%;
+	bottom: 0px;
+	background: url(../images/scene-fade-bottom-dark.png) no-repeat;
+	-webkit-palm-mouse-target: ignore;
+
+}
+
+.pane-header-title {
+	color: rgba(255, 121, 16, 0.9);
+	font-size: 1.4em;
+	font-weight: lighter;
+	text-transform:lowercase;
+	letter-spacing: -1px;
+	margin-left: 8px;
+	padding-bottom: 3px;
+}
+
+/* === friend feed pane === */
+#friendfeed-pane {
+	max-height: 94%;
+	min-height: 30%;
+	bottom: -480px;
+}
+
+#friendfeed-details-title {
+	color: rgba(255, 121, 16, 0.9);
+	font-size: 1.4em;
+	font-weight: lighter;
+	text-transform:lowercase;
+	letter-spacing: -1px;
+	margin-left: 8px;
+	padding-bottom: 3px;
+}
+
+#friendfeed-details-scroller {
+	max-height: 300px;
+}
+
+.friendfeed-details-avatar {
+	float: left;
+	margin: 2px 3px 2px 5px;
+	overflow: hidden;
+	height: 48px;
+	width: 48px;
+	background: none !important;
+	-webkit-border-radius: 4px;
+}
+
+.friendfeed-details-avatar img {
+	width: 42px;
+	height: 42px;
+}
+
+.friendfeed-details_meta {
+	padding: 0;
+	margin-bottom: 4px;
+	margin-left: 48px;
+	margin-top: 4px !important;
+	line-height: 1em;
+}
+
+.friendfeed-details-created_at {
+	float: right;
+	margin-right: 4px;
+	font-size: 0.7em;
+	color: rgba(255,255,255, 0.7);
+}
+
+.friendfeed-details-user_name {
+	font-size: 1.0em;
+	color: rgba(255,255,255, 0.9);
+	padding: 0;
+	margin: 0;
+}
+
+.friendfeed-details-beer_name, .friendfeed-details-brewery_name {
+	color: rgba(255,255,255, 0.8);
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+.friendfeed-details-comment {
+	color: rgba(255,255,255, 0.6);
+	font-weight: lighter;
+	margin-left: 8px;
+	margin-right: 8px;
+	margin-bottom: 8px;
+	font-size: 0.85em;
+	text-align: justify;
+}
+
+.friendfeed-details-toasts {
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	border-top: 1px solid #444;
+	color: rgba(255,255,255, 0.6);
+	font-weight: lighter;
+	font-size: 0.8em;
+}
+
+#friendfeed-comments-header {
+	color: rgba(255, 121, 16, 0.9);
+	font-size: 1.0em;
+	font-weight: lighter;
+	text-transform:lowercase;
+	letter-spacing: -1px;
+	margin-left: 8px;
+	padding-bottom: 3px;
+}
+
+#friendfeed-comments-list {
+	padding-bottom: 20px;
+}
+
+#friendfeed-comments-noitems {
+	display: none;
+	text-align: center;
+	font-size: 0.9em;
+	color: rgba(255,255,255,0.8);
+}
+
+#friendfeed-reply-button, #friendfeed-toast-button {
+	float: left;
+	margin-right: 10px;
+	background: rgba(255,255,255, 0.6);
+	color: red;
+}
+
+#friendfeed-toast-button {
+	float: right;
+	margin-right: 10px;
+	color: orange;
+}
+
+#friendfeed-details-location img {
+	max-width: 93%;
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-top: 8px;
+	padding: 2px;
+	border: 1px solid #eee;
+}
+
+/* === beer info pane === */
+#beerDetails-pane {
+	max-height: 80%;
+	min-height: 50%;
+	bottom: -480px;
+	z-index: 20;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+#beer-details-title {
+	color: rgba(255, 121, 16, 0.9);
+	font-size: 1.4em;
+	font-weight: lighter;
+	text-transform:lowercase;
+	letter-spacing: -1px;
+	margin-left: 8px;
+	padding-bottom: 3px;
+}
+
+.beer-details-avatar {
+	float: left;
+	margin: 2px 3px 5px 5px;
+	overflow: hidden;
+	height: 48px;
+	width: 48px;
+	background: none !important;
+	/*-webkit-border-radius: 4px;*/
+}
+
+.beer-details-avatar img {
+	width: 42px;
+	height: 42px;
+}
+
+.beer-details-beer_name {
+	font-size: 1.0em;
+	color: rgba(255,255,255, 0.9);
+	padding: 0;
+	margin: 0;
+}
+
+.beer-details-type, .beer-details-brewery_name, .beer-details-abv, #checkin-details-location {
+	color: rgba(255,255,255, 0.8);
+	font-weight: normal;
+	font-size: 0.8em;
+	-webkit-box-flex: 1;
+}
+
+.beer-details-meta {
+	float: left;
+	width: 80%;
+}
+.beer-details-info-wrapper, .beer-info-wrapper {
+	-webkit-box-flex: 1;
+}
+
+.beer-details-brewery_name.selected {
+	color: rgba(0,0,0, 0.7);
+	background-color: rgba(255,255,255, 0.8);
+}
+
+.beer-details-abv {
+	font-size: 1.0em;
+	margin-left: 5px;
+}
+
+.brewery-link-icon {
+	margin-left: 2px;
+	background: url(../images/arrow-right.png) center no-repeat;
+	width: 16px;
+	height: 16px;
+}
+
+.brewery-link {
+	margin-left: 4px;
+	color: rgba(255, 121, 16, 0.9);
+	font-size: 1.1em;
+}
+
+.beer-checkin-header {
+	width: 91%;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	border-top: 1px solid rgba(255, 121, 16, 0.5);
+	border-bottom: 1px solid rgba(255, 121, 16, 0.5);
+	height: 1.30em;
+	line-height: 1.2em;
+	font-size: 0.9em;
+	letter-spacing: -1px;
+	font-weight: lighter;
+	background: rgba(255, 121, 16, 0.7);
+	color: rgba(255,255,255, 0.5);
+	text-transform: lowercase;
+}
+
+.beer-info-wrapper {
+	width: 98%;
+	padding-left: 1%;
+	padding-right: 1%;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+}
+
+.beer-checkin-stats {
+/*	-webkit-box-flex: 1;*/
+/*	float: left;*/
+	height: 42px;
+	width: 24%;
+	margin: 2px;
+	/*background: rgba(255,255,255, 0.25);*/
+	background: rgba(255, 121, 16, 0.8);
+	-webkit-border-radius: 7px;
+}
+
+.beer-checkin-stats-title, .beer-checkin-stats-count {
+	color: rgba(0,0,0, 0.8);
+	font-size: 0.75em;
+	font-weight: normal;
+	letter-spacing: 0px;
+	text-align: center;
+	text-transform: lowercase;
+}
+
+.beer-checkin-stats-count {
+	color: rgba(255,255,255, 0.75);
+	font-weight: bold;
+	font-size: 0.9em;
+}
+/* === checkin pane === */
+#checkinDetails-pane {
+	min-height: 65%;
+	max-height: 85%;
+	bottom: -480px;
+}
+#checkin-details-title {
+	color: rgba(255, 121, 16, 0.9);
+	font-size: 1.4em;
+	font-weight: lighter;
+	text-transform:lowercase;
+	letter-spacing: -1px;
+	margin-left: 8px;
+	padding-bottom: 8px;
+}
+
+#checkin-details-scroller {
+	max-height: 350px;
+}
+
+.title.toggleDisabled {
+	text-decoration:line-through;
+	color: rgba(255,255,255, 0.6);
+	font-style: italic;
+}
+
+#checkin-details-comment-container {
+	margin: 7px;
+	margin-bottom: 12px;
+}
+
+#checkin-details-comment-body {
+	height: 120px;
+	margin-bottom: 10px;
+}
+#checkin-details-comment-footer {
+	margin-top: -1em;
+	padding-right: 6px;
+	padding-left: 6px;
+	width: 100%;
+	padding-bottom: 5px;
+}
+
+#checkin-details-comment-char-count {
+	position: relative;
+	top: -1.08em;
+	left: -5px;
+	float: right;
+	margin-right: 18px;
+	font-size: 2.7em;
+	font-weight: bold;
+	color: rgba(255,121, 16, 0.8);
+	letter-spacing: -4px;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 500ms;
+}
+
+#checkin-details-comment-char-count.red {
+	color: rgba(255,0,0, 0.8);
+}
+
+#checkin-details-location {
+	color: rgba(255,255,255, 0.8);
+	font-weight: lighter;
+	font-size: 0.9em;
+	padding: 8px;
+}
+
+
+/* === checkin success pane === */
+#checkinSuccess-pane {
+	max-height: 80%;
+	min-height: 30%;
+	bottom: -480px;
+}
+
+#checkin-success-scroller {
+	max-height: 350px;
+}
+
+#checkin-success-msg {
+	width: 96%;
+	padding: 8px;
+	font-size: 0.8em;
+	color: rgba(255,255,255, 0.7);
+}
+
+#checkin-success-beer-count {
+	font-size: 1.25em;
+	letter-spacing: -1px;
+	color: rgba(255, 121, 16, 0.8);
+}
+
+.badge-thumbnail {
+	height: 60px;
+	width: 60px;
+	background: none !important;
+}
+
+.badge-thumbnail img {
+	width: 60px;
+	height: 60px;
+}
+
+.badge-name {
+	font-size: 1.0em;
+	color: rgba(255,255,255, 0.9);
+	text-align: center;
+}
+
+.badge-desc {
+	font-size: 0.8em;
+	color: rgba(255,255,255, 0.5);
+	padding: 8px;
+}
+
+.recommend-thumbnail {
+	float: left;
+	margin: 2px 3px 2px -3px;
+	overflow: hidden;
+	height: 36px;
+	width: 36px;
+	background: none !important;
+	-webkit-border-radius: 4px;
+}
+
+.recommend-thumbnail img {
+	width: 32px;
+	height: 32px;
+}
+
+.recommendResult-row .palm-row-wrapper {
+	min-height: 45px !important;
+}
+
+.recommendResult-row {
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 2px;
+	padding-top: 5px !important;
+	background: transparent;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.recommendResult-row.selected {
+	background-color: rgba(255,255,255, 0.3) !important;
+	border-top: 1px solid #444444;
+	border-bottom: none !important;
+}
+
+/* === venue search === */
+#venueSearch-pane {
+	min-height: 40%;
+	max-height: 88%;
+	bottom: -480px;
+	z-index: 20;
+}
+
+#venue-search-title {
+	color: rgba(255, 121, 16, 0.9);
+	font-size: 1.4em;
+	font-weight: lighter;
+	text-transform:lowercase;
+	letter-spacing: -1px;
+	margin-left: 8px;
+	padding-bottom: 8px;
+}
+
+#venue-search-scroller {
+	max-height: 350px;
+}
+
+.venueResult-row .palm-row-wrapper {
+	min-height: 45px !important;
+}
+
+.venueResult-row {
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 2px;
+	padding-top: 5px !important;
+	background: transparent;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.venueResult-row.selected {
+	background-color: rgba(255,255,255, 0.3) !important;
+	border-top: 1px solid #444444;
+	border-bottom: none !important;
+}
+
+.venue-name, .venue-address, .venue-distance {
+	color: rgba(255,255,255, 0.8);
+	font-weight: lighter;
+	font-size: 0.8em;
+}
+.venue-distance, .venue-address {
+	color: rgba(255,255,255, 0.7);
+	font-size: 0.7em;
+}
+
+.venue-distance {
+	color: rgba(255,255,255, 0.6);
+	font-style: italic;
+}
+
+/* === comment posting === */
+#post-comment-pane {
+	height: 220px;
+	bottom: -250px;
+}
+
+#post-comment-title {
+	color: rgba(255, 121, 16, 0.9);
+	font-size: 1.4em;
+	font-weight: lighter;
+	text-transform:lowercase;
+	letter-spacing: -1px;
+	margin-left: 8px;
+	padding-bottom: 3px;
+}
+#post-comment-container {
+	margin: 7px;
+	margin-bottom: 12px;
+}
+
+#post-comment-body {
+	height: 120px;
+	margin-bottom: 10px;
+}
+#post-comment-footer {
+	margin-top: -1em;
+	padding-right: 6px;
+	padding-left: 6px;
+	width: 100%;
+}
+
+#post-comment-char-count {
+	float: right;
+	margin-right: 18px;
+	font-size: 2.7em;
+	font-weight: bold;
+	color: rgba(255,121, 16, 0.8);
+	letter-spacing: -4px;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 500ms;
+}
+
+#post-comment-char-count.red {
+	color: rgba(255,0,0, 0.8);
+}
+
+.checkin-comment {
+	color: rgba(255,255,255, 0.5);
+	font-size: 0.8em;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+#friendfeed-details-toastcount {
+	font-size: 1.1em;
+}
+
+.checkin-created_at {
+	float: right;
+	margin-right: 4px;
+	font-size: 0.7em;
+	color: rgba(255,255,255, 0.8);
+}
+
+/* === Search Results === */
+.search-divider, .venueSearch-divider {
+	background: rgba(0,0,0, 0.5);
+	color: rgba(255,255,255, 0.8);
+	text-align: left;
+	width: 96%;
+	height: 1.35em;
+	font-weight: lighter;
+	letter-spacing: -1px;
+	font-size: 0.75em;
+	padding-left: 2%;
+	padding-right: 2%;
+	border-top: 1px solid rgba(255,255,255, 0.3);
+	border-bottom: 1px solid rgba(0,0,0, 0.5);
+	margin-top: 3px;
+}
+
+.venueSearch-divider {
+	background-color: rgba(255, 121, 16, 0.75);
+	border-top: 1px solid rgba(255,255,255, 0.5);
+	border-bottom: 1px solid rgba(255,255,255, 0.3);
+}
+
+/* === comment posting === */
+#search-pane {
+	background: rgba(0,0,0, 0.8);
+	height: 135px;
+	width: 94%;
+	left: 3%;
+	bottom: -140px;
+	border-bottom: 1px solid #ccc;
+	-webkit-border-radius: 12px;
+}
+
+#search-pane-title {
+	color: rgba(255, 121, 16, 0.9);
+	font-size: 1.4em;
+	font-weight: lighter;
+	text-transform:lowercase;
+	letter-spacing: -1px;
+	margin-left: 8px;
+	padding-bottom: 3px;
+}
+#search-pane-container {
+	margin: 7px;
+	margin-bottom: 12px;
+}
+
+.search-pane-field {
+	color: #000;
+}
+
+#search-pane-footer {
+	margin-top: -1em;
+	padding-right: 6px;
+	padding-left: 6px;
+	width: 100%;
+}
+
+.searchResult-row .palm-row-wrapper {
+	min-height: 38px !important;
+}
+
+.searchResult-row {
+	text-align: left;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-bottom: 3px;
+	padding-top: 5px !important;
+	background: transparent;
+	border-bottom: 1px solid rgba(0,0,0, 0.2);
+}
+.searchResult-row.selected {
+	background-color: rgba(0,0,0, 0.5) !important;
+	border-top: 1px solid #444444;
+	border-bottom: none !important;
+}
+
+.searchResult-thumbnail {
+	float: left;
+	margin: 2px 3px 2px -3px;
+	overflow: hidden;
+	height: 35px;
+	width: 35px;
+	background: none !important;
+	-webkit-border-radius: 4px;
+}
+
+.searchResult-thumbnail img {
+	width: 35px;
+	height: 35px;
+}
+
+.pane-divider {
+	color: rgba(255, 121, 16, 0.9);
+	font-size: 0.8em;
+	font-weight: lighter;
+	text-transform:lowercase;
+	letter-spacing: -1px;
+	margin-left: 8px;
+	padding-bottom: 3px;
+}
+
+.rating-wrapper {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+}
+
+.rating_bar {
+	color: rgba(255,255,255, 0.5);
+	/* content: string("avg. rating");*/
+	margin: 2px;
+	margin-top: 1.0em;
+	margin-right: 10px;
+	height: 12px;
+	width: 50px;
+  /* background: url(../images/star_x_grey.gif) 0 0 repeat-x;*/
+	background: rgba(255,255,255, 0.2);
+	/* -webkit-border-radius: 1px;*/
+	-webkit-box-flex: 1;
+}
+
+.rating_bar div {
+	height: 12px;
+	/*background: url(../images/star_x_orange.gif) 0 0 repeat-x;*/
+	background: rgba(255, 121, 16, 0.9);
+}
+
+#star-rating-wrapper {
+	padding-left: 1px;
+	padding-right: 1px;
+	margin-left: 8px;
+}
+.star {
+	float: left;
+	margin-left: 1px;
+	margin-right: 1px;
+	width: 44px;
+	height: 44px;
+	background: url(../images/gold_star.png) no-repeat;
+	-webkit-background-size: contain;
+}
+
+.star.off {
+	background: url(../images/gray_star.png) no-repeat;
+}
+
+/* === Spinners === */
+#spin-overlay {
+	position: fixed;
+	top: -60px;
+	right: 30px;
+	padding: 3px;
+	padding-bottom: 5px;
+	width: 40px;
+	height: 50px;
+	z-index: 9000;
+	background-color: rgba(0,0,0,.75);
+	-webkit-border-bottom-left-radius: 12px;
+	-webkit-border-bottom-right-radius: 12px;
+	-webkit-transition-property: top, opacity;
+	-webkit-transition-duration: 450ms;
+	-webkit-animation-timing-function: ease-out;
+	-webkit-palm-mouse-target: ignore;
+}
+
+#spinner-small {
+	position: fixed;
+	margin-top: 10px; 
+	margin-left: 4px;
+}
+
+.palm-dark .palm-group-title {
+	color: rgba(255, 121, 16, 0.9);
+	font-weight: lighter;
+	text-transform: lowercase;
+	letter-spacing: -1px;
+	font-size: 0.95em;
+}
+
+/* === Fades === */
+
+.scene-fade {
+    height: 54px;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    -webkit-palm-mouse-target: ignore;
+}
+
+.scene-fade.top {
+	background: url(../images/scene-fade-top-dark.png) repeat-x center bottom;
+	top: 0px;
+}
+.scene-fade.bottom {
+    bottom: 0px;
+	background: url(../images/scene-fade-bottom-dark.png) repeat-x center bottom;
+}

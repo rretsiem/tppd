@@ -1,0 +1,62 @@
+<div class="pane-header-title" id="checkin-details-title">check-in</div>
+<div id="pane-fade-top" x-mojo-scroll-fade="top"></div>
+<div id="checkin-details-scroller" x-mojo-element="Scroller">
+
+	<!-- top details with beer img, username, beer, brewery-->
+	<div class="beer-details-avatar">
+		<img src="#{beer_stamp}" />
+	</div>
+
+	<div class="beer-details-beer_name">#{-beer_name}</div>
+	<div class="beer-details-brewery_name">#{-brewery_name}</div>
+	<div id="checkin-details-location"></div>
+	<div class="palm-row-wrapper">
+		<div class="title" id="star-rating-wrapper">
+			<div id="star1" class="star off"></div>
+			<div id="star2" class="star off"></div>
+			<div id="star3" class="star off"></div>
+			<div id="star4" class="star off"></div>
+			<div id="star5" class="star off"></div>
+		</div>
+	</div>
+	<div id="checkin-details-comment-container" class="palm-row-wrapper textfield-group floating" x-mojo-focus-highlight="true">
+		<div class="title">
+			<div id="checkin-details-comment-body" x-mojo-element="TextField"></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div id="checkin-details-comment-footer">
+		<div id="checkin-details-comment-char-count">140</div>
+	</div>
+	<div class="palm-group">
+		<div class="palm-group-title">Sharing</div>
+		<div class="palm-row first">
+			<div class="palm-row-wrapper">
+				<div id="checkin-share-facebook" x-mojo-element="ToggleButton"></div>
+				<div class="title #{facebookToggleDisabled}">facebook</div>
+			</div>
+		</div>
+		<div class="palm-row">
+			<div class="palm-row-wrapper">
+				<div id="checkin-share-twitter" x-mojo-element="ToggleButton"></div>
+				<div class="title #{twitterToggleDisabled}">twitter</div>
+			</div>
+		</div>
+		<div class="palm-row">
+			<div class="palm-row-wrapper">
+				<div id="checkin-share-foursquare" x-mojo-element="ToggleButton"></div>
+				<div id="checkin-share-foursquare-title" class="title #{foursquareToggleDisabled}">foursquare</div>
+			</div>
+		</div>
+		<div class="palm-row last">
+			<div class="palm-row-wrapper">
+				<div id="checkin-share-gowalla" x-mojo-element="ToggleButton"></div>
+				<div class="title #{gowallaToggleDisabled}">gowalla</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- adjust the height of the last item for scroller-->
+	<div style="height: 60px;"></div>
+</div>
+<div id="pane-fade-bottom" x-mojo-scroll-fade="bottom"></div>

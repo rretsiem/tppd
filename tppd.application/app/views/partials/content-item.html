@@ -1,0 +1,22 @@
+<div name="content-#{key}" x-mojo-tap-highlight="delayed" class="content-row #{cssClass}">
+	<div class="palm-row-wrapper">
+		<div style="clear:both;"></div>
+
+		<div class="user_avatar">
+			<img class="avatar_thumbnail" src="#{user.user_avatar}" />
+		</div>
+
+		<div class="content-feed_meta">
+			<span class="content-user_name">#{user.user_name}</span>
+			<span class="content-created_at">
+				#{relative_created_at}
+			</span>
+		</div>
+			<div class="content-location"><span class="#{hasLocation}"></span> #{-venue_name}</div>
+
+		<div class="content-beer_name">#{-beer_name}</div>
+		<div class="content-brewery_name">#{-brewery_name}</div>
+		<div class="content-comment">#{-check_in_comment}</div>
+		<!-- <div class="content-location"><span class="#{hasLocation}"></span> #{-venue_name}</div>-->
+	</div>
+</div>

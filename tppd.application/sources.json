@@ -1,0 +1,27 @@
+[
+    {"source": "app/assistants/app-assistant.js"},
+	{"source": "app/lib/Untappd-api.js"},
+	{"source": "app/lib/helpers.js"},
+	{"source": "app/models/availPanes.js"},
+	{"source": "app/models/commandMenuItems.js"},
+	{"source": "app/lib/relative-time.js"},
+    {"source": "app/lib/Lawnchair.js"},
+    {"source": "app/lib/md5.js"},
+    {"source": "app/lib/Base64.js"},
+    {"source": "app/lib/adaptors/LawnchairAdaptorHelpers.js"},
+    {"source": "app/lib/adaptors/WebkitSQLiteAdaptor.js"},
+    {"source": "app/lib/adaptors/CookieAdaptor.js"},
+    {
+        "scenes": "launch",
+        "source": "app/assistants/launch-assistant.js"
+    },
+    {
+        "scenes": "main",
+        "source": "app/assistants/main-assistant.js"
+    },
+    {
+        "scenes": "help",
+        "source": "app/assistants/help-assistant.js"
+    }
+
+]

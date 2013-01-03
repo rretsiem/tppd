@@ -1,0 +1,18 @@
+<div name="checkin-#{checkin_id}" class="content-row #{cssClass}">
+	<div class="palm-row-wrapper">
+		<div style="clear:both;"></div>
+
+		<div class="user_avatar">
+			<img class="avatar_thumbnail" src="#{user.img}" />
+		</div>
+
+		<div class="content-feed_meta">
+			<span class="checkin-created_at">#{relative_created_at}
+				<span class="#{hasLocation}"></span>
+			</span>
+			<span class="content-user_name">#{user.username}</span>
+		</div>
+
+		<div class="checkin-comment">#{-text}</div>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+{
+	"id": "com.codingbees.tppd",
+	"version": "1.0.1",
+	"vendor": "The CodingBees",
+	"type": "web",
+	"main": "index.html",
+	"title": "Tppd!",
+	"icon": "tppd-icon64.png",
+	"splashicon": "images/tppd-icon256.png",
+	"splashBackground": "images/splash-bg.png",
+	"noWindow": true,
+	"universalSearch" : {
+        "action" : {
+            "displayName" : "Beer Search",
+            "url" : "com.codingbees.tppd",
+            "launchParam" : {
+                "action" : "search",
+                "q" : "#{searchTerms}"
+            }
+        }
+    }
+}

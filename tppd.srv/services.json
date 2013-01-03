@@ -1,0 +1,25 @@
+{
+"id": "com.codingbees.tppd.srv",
+"description": "The CodingBees Tppd! Service",
+"activityTimeout" : 30,
+"services": [{
+	"name": "com.codingbees.tppd.srv",
+	"description": "Return requests for Untappd API",
+	"commands": [
+		{
+			"name" : "getPosition",
+			"assistant" : "GetPositionAssistant",
+			"public": true
+		},
+		{
+			"name" : "getVenues",
+			"assistant" : "GetVenuesAssistant",
+			"public" : true
+		},
+		{
+			"name" : "untappdService",
+			"assistant" : "UntappdAssistant",
+			"public" : true
+		}]
+	}]
+}

@@ -1,0 +1,50 @@
+<div class="pane-header-title" id="beer-details-title">#{-name}</div>
+
+	<!-- top details with beer img, username, beer, brewery-->
+	<div class="beer-details-info-wrapper">
+		<div class="beer-details-avatar">
+			<img src="#{beer_stamp}" />
+		</div>
+
+		<div class="beer-details-meta">
+
+			<div class="beer-details-brewery_name" x-mojo-tap-highlight="delayed">#{-brewery}<span class="brewery-link">&gt;</span></div>
+			<div class="beer-details-type">#{type} <span class="beer-details-abv">#{display_abv}</span></div>
+			
+			<div class="rating-wrapper">
+				<div class="rating_bar">
+					<div style="width: #{starRating};"></div>
+				</div>
+				<div class="rating_bar">
+					<div style="width: #{yourRating};"></div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<div class="beer-checkin-header">checkin stats</div>
+	<div class="beer-info-wrapper">
+		<div class="beer-checkin-stats">
+			<div class="beer-checkin-stats-title">total</div>
+			<div class="beer-checkin-stats-count">#{total_count}</div>
+		</div>
+		<div class="beer-checkin-stats">
+			<div class="beer-checkin-stats-title">unique</div>
+			<div class="beer-checkin-stats-count">#{unique_count}</div>
+		</div>
+		<div class="beer-checkin-stats">
+			<div class="beer-checkin-stats-title">monthly</div>
+			<div class="beer-checkin-stats-count">#{monthly_count}</div>
+		</div>
+		<div class="beer-checkin-stats">
+			<div class="beer-checkin-stats-title">you</div>
+			<div id="beer-checkin-stats-count" class="beer-checkin-stats-count">#{your_count}</div>
+		</div>
+	</div>
+
+	<!-- adjust the height of the last item for scroller-->
+	<div style="height: 70px;"></div>
+</div>

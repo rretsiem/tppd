@@ -1,0 +1,36 @@
+<div class="pane-header-title">Cheers!</div>
+<div id="pane-fade-top" x-mojo-scroll-fade="top"></div>
+<div id="checkin-success-scroller" x-mojo-element="Scroller">
+
+	<!-- top details with beer img, username, beer, brewery-->
+	<div class="beer-details-avatar">
+		<img src="#{beer_details.img}" />
+	</div>
+
+	<div class="beer-details-beer_name">#{-beer_details.beer_name}</div>
+	<div class="beer-details-brewery_name">#{-beer_details.brewery_name}</div>
+	<div id="checkin-details-location">#{-foursquare_details.venue_name}</div>
+
+	<div id="checkin-success-msg">This is your <span id="checkin-success-beer-count">#{-checkin_total.beer}</span> beer overall
+		and your <span id="checkin-success-beer-count">#{-checkin_total.beer_month}</span> beer this month.
+	</div>
+
+	<div class="palm-group" id="checkin-success-badge-wrapper">
+		<div class="palm-group-title">Badges</div>
+		<div id="checkin-success-badges"></div>
+	</div>
+
+	<div class="pane-divider">recommendations</div>
+	<div id="checkin-success-recommendations" x-mojo-element="List"></div>
+
+	<div id="checkin-success-foursquare-wrapper" style="display:none;">
+		<div class="pane-divider">foursquare</div>
+	</div>
+	<div id="checkin-success-gowalla-wrapper" style="display:none;">
+		<div class="pane-divider">gowalla</div>
+	</div>
+
+	<!-- adjust the height of the last item for scroller-->
+	<div style="height: 60px;"></div>
+</div>
+<div id="pane-fade-bottom" x-mojo-scroll-fade="bottom"></div>

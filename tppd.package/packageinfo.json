@@ -1,0 +1,12 @@
+{
+  "id": "com.codingbees.tppd",
+  "package_format_version": 2,
+  "loc_name": "Tppd!",
+  "version": "1.0.1",
+  "icon": "tppd-icon64.png",
+  "miniicon": "icon.png",
+  "vendor": "The CodingBees",
+  "vendorurl": "codingbees.com",
+  "app": "com.codingbees.tppd",
+  "services": ["com.codingbees.tppd.srv"]
+}

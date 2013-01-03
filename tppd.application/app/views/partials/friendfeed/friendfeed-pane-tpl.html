@@ -1,0 +1,33 @@
+<div class="pane-header-title" id="friendfeed-details-title">checkin details</div>
+<div id="pane-fade-top" x-mojo-scroll-fade="top"></div>
+<div id="friendfeed-details-scroller" x-mojo-element="Scroller">
+	<!-- top details with beer img, username, beer, brewery-->
+	<div class="friendfeed-details-avatar">
+		<img src="#{beer_stamp}" />
+	</div>
+	<div class="friendfeed-details_meta">
+		<span class="friendfeed-details-created_at">#{relative_created_at}</span>
+		<span class="friendfeed-details-user_name">#{user.user_name}</span>
+	</div>
+
+	<div class="friendfeed-details-beer_name">#{beer_name}</div>
+	<div class="friendfeed-details-brewery_name">#{brewery_name}</div>
+	<div class="friendfeed-details-comment">#{check_in_comment}</div>
+
+	<div class="friendfeed-details-toasts"><span id="friendfeed-details-toastcount">0</span> friends have toasted this</div>
+
+	<!-- show map if tweet has location -->
+	<div id="friendfeed-details-location">#{-googleMap}</div>
+
+	<!-- comments -->
+	<div id="friendfeed-comments-header">comments</div>
+	<div id="friendfeed-comments-noitems">No comments yet. Why not add one?</div>
+	<div id="friendfeed-comments-list" x-mojo-element="List"></div>
+	<div id="friendfeed-comments-spinner" x-mojo-element="Spinner" style="margin-top: 5px; margin-left: 8px;"></div>
+
+	<!-- adjust the height of the last item for scroller-->
+	<div style="height: 30px;"></div>
+
+</div>
+<div id="pane-fade-bottom" x-mojo-scroll-fade="bottom"></div>
+</div>
